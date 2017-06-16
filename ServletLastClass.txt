@@ -1,0 +1,92 @@
+ServletConfig and ServletContext
+Connection pooling
+Log4J
+
+
+ServletContext - One Object per Web Application. It act like a global object. Once a data is defined it is available for whole context(root) throughout. no time limit
+
+it is defined in web.xml like
+parameter of web are stored in it
+<context-param>
+  <param-name>tollfreeno</param-name>
+  <param-value>180012121434</param-value>
+</context-param>
+
+
+
+Servlet Config is one object per servlet i.e, we want some info that has to be shown on one servlet and not on other we use it
+
+
+
+from 2.5 servlet provided annotation before it we has to do entry in web.xml
+<init-param>
+
+eg-
+<servlet>
+        <description></description>
+        <display-name>Test</display-name>
+        <servlet-name>Test</servlet-name>
+        <servlet-class>servlets.Test</servlet-class>
+        <init-param>
+            <param-name>dname</param-name>
+            <param-value>sun.jdbc.odbc.JdbcOdbcDriver</param-value>
+        </init-param>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>Test</servlet-name>
+        <url-pattern>/Test</url-pattern>
+    </servlet-mapping>
+	
+	
+Scope are
+
+request : from one page to another
+session : till session exist
+servletContext	: throughout context for any time project is live
+
+for dynamic ServletContext.setAttribute();
+first message need to be set by logging in and then only we can show it elsewhere
+
+
+
+*** When first time request come object of servlet is formed when init works***
+
+if we have to make object earlier to start init earlier.
+
+Servlet Object is made one 
+<load-on-startup>1</load-on-startup> makes object of servlet as soon as server starts. 1 gives the order in which they load act as priority
+
+init make ServletConfig as super class has init which is responsible for initializing of ServletConfig
+
+ques 1) if u overwrite init what is problem?
+ques 2) if we want ServletCOnfig object in init how will we get?
+
+ans 1,2) use super.init(ServletConfig s) to initialize ServletConfig
+
+
+
+====================================================================
+
+Whenever u create connection and close connection take care there shall be no logic statements between it so that connection dont stay open for long
+
+we create 50 or any number of connection open in pool and provide to the user till the time needed. and when connection is not needed we it will be provided back to the pool to be used again.
+
+//TomCat Administration
+  
+    <Resource name="jdbc/myjndi" auth="Container"
+		type="javax.sql.DataSource" username="root" password="megaboy44"
+		driverClassName="com.mysql.jdbc.Driver"
+		url="jdbc:mysql://localhost:3306/talentfinderdb"
+		maxActive="10" maxIdle="4" />
+		
+maxActive is number of connection open in pool and maxIdle is number of connection that can be kept idle
+myjndi is lookup name for fake name of service of pooling on server and from now on connection is not made by programmer 
+Container do the pooling and it makes the connection so we provide it all information
+
+
+	Context initContext  = new InitialContext(); //we tell context where our web application is working.it is handle of tomcat
+		Context envContext  = (Context)initContext.lookup("java:/comp/env"); //tomcat make connection here in this environment
+		DataSource dataSource = (DataSource)envContext.lookup("jdbc/myjndi");//get the data source from the pool where we have these connection
+		Connection connection = dataSource.getConnection();
+		
+		

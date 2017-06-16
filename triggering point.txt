@@ -1,0 +1,1 @@
+On server triggering point is one but multiple nodes are made which distribute the traffic on different nodes.

@@ -1,0 +1,26 @@
+List
+Set
+Queue
+
+three data structure come from collection interface
+
+    collection				  {for CRUD operations}
+List   Set    Queue   		  { all are interfaces }
+
+all CRUD function are just declared in collection
+
+for index wise working List is used
+
+            List
+ArrayList  Vector   LinkedList	
+
+Arraylist is not synchronous and vector is synchronous so only one can work in multi threading
+
+
+Set is not to show duplicate data as it is a binary search tree inside 
+
+Priority Queue is under Queue  
+
+LinkedList implements Queue as well as List
+
+In java linked list is doubly linked list from inside and further can be used as desired

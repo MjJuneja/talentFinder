@@ -1,0 +1,29 @@
+Servlet is a simple java program which run iside a container. Container is TomCat here.
+At the same time tomcat use JRE. syntax here will be of servlet which will understand it and use JRE to run it.
+
+For servlet we need a library to run as it is not a part of JDK.
+in core we were using JSE java standard edition now we are using enterprise edition
+
+
+   Earlier our java class didnt run on server as it lacked API  ... JSP lack these API ( java server pages)
+   
+   Servlet contains these api
+   
+   servlet convert it in web version
+    Component
+ Servlet	JSP
+ 
+ 
+ Container --> deploy the component
+ 
+ 
+			on creating new servlet it ask toget and topost   toget is for getting data and topost to submit data
+			
+			
+			
+printStream ps = new PrintStream(new File(path));
+
+System.setOut(ps);
+Sytem.out.println("hey");  // print on file now
+
+			

@@ -1,0 +1,48 @@
+J2EE -java enterprise edition.  now known as JEE
+
+Requirement for JEE apps
+
+     1.) Container : Run time environment or like JRE..this plays application on server. runs byte code and convert it in html code to open it on browser
+	      a.) Component: Servlet and JSP are running inside it.  {Servlet is the main and JSP is its wrapper and Struts is wrapper of JSP and servlet}
+		                 servlet came in market in 1997. Struts came in market in 2000 and v2.0 came in 2004.
+		  b.) Service : eg. "Multi threading"		  
+		  
+		  c.) Security: Data travel on net in secured manner. {https can be done by doing changes in configuration}
+		                https provide secured routes for package of data and encryption takes place.
+						http problem is that it is connection less network as it cuts the network when connected so to remember we use Persistence
+			
+          d.) Persistence : to remember clients that server has to remember.	
+
+JEE complience container help operating it.
+
+any server that follows JEE guidelines can be used as JEE complience server.
+eg.-   Tomcat {most used} Web Server, powerful
+       Weblogic
+       WebSphere
+       Jetty   Web Server,light
+       JBoss {2nd most}  EJV Container
+       Oracle App Server
+       Glass Fish	   
+	   
+	   
+	   Web Server means onle JSP and Servlet works on them
+	   Web Server has web container that can operate JSP and Servlet
+	   
+	   JBoss and other based on EJV Container where logic can be uploaded on server. So that same logic can be hosted on server and can be used
+	   with different applications like web, android, Swing or nay other possible. It is most secured
+		
+		One containing both are called application server eg. JBoss
+		
+		
+		
+Eclipse follows
+
+Project --> Web-INF --> Class --> *.class(Byte Code)
+              |
+			  |
+			  V
+			  web.xml (contains low level information like mata info)
+			  
+			  
+			  
+			  in JSP limitation is writing java in html

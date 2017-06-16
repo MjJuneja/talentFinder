@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1" name="viewport" content="width=device-width, initial-scale=1">
+<title>Insert title here</title>
+<link rel="stylesheet" href="css/bootstrap.min.css" />
+<script src="js/jquery-3.2.0.min.js"></script>
+<script src="js/bootstrap.min.js"></script>
+
+</head>
+<body>
+  <h1>Talent Finder Login</h1>	
+  
+ <div class="container">  
+  <form class="form-horizontal" action="user" method="post">
+  <!-- creating a hidden input field that is not visible to user but submit data we set. -->
+  <input type="hidden" name="branch" value="delhi"/>
+  <div class="form-group">
+    <label for="inputEmail3" class="col-sm-2 control-label">Email</label>
+    <div class="col-sm-10">
+      <input class="form-control" id="inputEmail3" type="text" placeholder="tpe your user id" name="userid">
+    </div>
+  </div>
+  <div class="form-group">
+    <label for="inputPassword3" class="col-sm-2 control-label">Password</label>
+    <div class="col-sm-10">
+      <input type="password" class="form-control" id="inputPassword3" placeholder="tpe your password" name="pwd">
+    </div>
+  </div>
+  
+  <div class="form-group">
+    <label for="inputEmail3" class="col-sm-2 control-label">Color</label>
+    <div class="col-sm-10">
+      <input class="form-control" id="inputEmail3" type="color" placeholder="tpe your fav colour" name="color">
+    </div>
+ </div>
+ 
+  <div class="form-group">
+    <div class="col-sm-offset-2 col-sm-10">
+      <div class="checkbox">
+        <label>
+          <input type="checkbox"> Remember me
+        </label>
+      </div>
+    </div>
+  </div>
+  <div class="form-group">
+    <div class="col-sm-offset-2 col-sm-10">
+      <button type="submit" class="btn btn-primary">Sign in</button>
+      <button type="reset" class="btn btn-primary">Clear</button>
+    </div>
+  </div>
+</form>
+  </div>
+ <!--   
+  <form action="user" method="post">
+  <table>
+  
+     <tr>
+     
+       <td><label>Userid</label> </td>
+       <td><input type="text" placeholder="tpe your user id" name="userid"></td>
+     
+     </tr>
+       <tr>
+     
+       <td><label>Password</label> </td>
+       <td><input type="password" placeholder="tpe your password" name="pwd"></td>
+     
+     </tr>
+      <tr>
+     
+       <td><label>Pincode</label> </td>
+       <td><input type="text" placeholder="tpe your pincode" name="pincode"></td>
+     
+     </tr>
+        
+       <tr>
+     
+       <td><button type="submit">Login</button></td>
+       <td><button type="reset">Clear</button></td>
+     
+     </tr>
+  
+  </table>
+  </form>
+   -->
+  <h2><a href="reg.html">Register here</a></h2>
+  <h2><a href="companyreg.html">Company Registeration here</a></h2>
+</body>
+</html>

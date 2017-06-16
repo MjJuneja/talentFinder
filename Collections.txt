@@ -1,0 +1,41 @@
+Collections - Data Structure
+access time from data base to DS is about 1 second and then rendering time or printing time is more. 
+Keeping data in DS helps us closing the DB after taking data from DB and then accessing data from DS only.
+
+DS keep intermediate results and DB keep final results
+
+
+java.util has all the DS and this package has an interface level like
+
+			collection(I)											Map(I)									
+		->  List(I)  works on index									->Hash Table(C)
+		->  Set(I)	 to avoid duplicacy								->Hash Map(C)
+		->  Queue(I) linked list									->Tree Map(C)
+																	->Linked Hash Map(C)
+		
+							Collections(Class)    Array (Class)   
+																	
+																	
+		List
+		->Vector(C)	(v1.2) {Synchronized : provide lock for multi user if accessed by one}
+		->Array List(C) (v1.4) {not synchronized}
+		->Linked List(C)  {internally it is doubly linked list.}
+
+		Set
+		->Hash Set(C)
+		->Tree Set(C)
+		->Linked Hash Set(C)
+		
+		Queue
+		->Priority Queue(C)
+		
+		
+		
+		->Iterator was made to traverse these data structures. {not there for map}
+		->Enumeration is lagacy it was made in 1.2 to traverse the vector at that time.
+		Both of them are interfaces.
+		-> List iterator was made for list elements in both directions {bi-directional}
+		
+		
+	Array List works on contiguous memory so traversing and searching is fast while in linked list insertion and deletion is fast. so as per the requirement DS should be selected.	
+		

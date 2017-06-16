@@ -1,0 +1,74 @@
+create table user_mater(uid integer AUTO_INCREMENT primary key,userid varchar(50) not null,password varchar(25) not null,islogin varchar(1) default 'N',status varchar(1) not null default 'D');
+
+create table role_master(roleid integer AUTO_INCREMENT primary key,name varchar(200)  unique not null,descr varchar(200) not null,status varchar(1) default 'A');
+
+create table right_master(rightid integer AUTO_INCREMENT primary key,name varchar(50) not null,descr varchar(200),screenname varchar(100) not null,status varchar(1) default 'A');   //screenname is name of sevlet to show
+
+mysql> create table user_role_mapping(id integer auto_increment primary key,uid integer not null,roleid integer not null,status varchar(1) default 'A',foreign key(uid) references user_master(uid) on delete cascade,foreign key(roleid) references role_master(roleid) on delete cascade);
+
+//foreign key makes us add only corresponding data in the column.
+//on delete cascade if we delete data from main table it is deleted it is deleted from child table... similarly there is update cascade and for both cascade all
+
+
+create table role_right_mapping(id integer auto_increment primary key,roleid integer not null,rightid integer not null,status varchar(1) default 'A', foreign key(roleid) references role_master(roleid) on delete cascade, foreign key(rightid) references right_master(rightid) on delete cascade);
+
+
+
+select um.userid,rm.name as 'rolename',rr.name as 'rightname',rr.screenname from user_master um,role_master rm,right_master rr,user_role_mapping userrole,role_right_mapping roleright where um.userid='mukul' and um.password='123' and um.status='A' and um.uid=userrole.uid and rm.roleid=roleright.roleid and rm.roleid=userrole.roleid and rr.rig htid=roleright.rightid and roleright.status='A';
+
+//output
++--------+-------+--------------+------------+
+| userid | name  | name         | screenname |
++--------+-------+--------------+------------+
+| mukul  | Admin | Add New User | /addUser   |
++--------+-------+--------------+------------+
+1 row in set (0.00 sec)
+
+
+output of all tables
+
+mysql> select * from user_master;
++-----+--------+----------+---------+--------+
+| uid | userid | password | islogin | status |
++-----+--------+----------+---------+--------+
+|   1 | mukul  | 123      | N       | A      |
++-----+--------+----------+---------+--------+
+1 row in set (0.00 sec)
+
+mysql> select * from role_master;
++--------+-------+------------------------+--------+
+| roleid | name  | descr                  | status |
++--------+-------+------------------------+--------+
+|      1 | Admin | This is the Admin User | A      |
+|      2 | guest | This is the guest user | A      |
++--------+-------+------------------------+--------+
+2 rows in set (0.00 sec)
+
+mysql> select * from right_master;
++---------+----------------------+--------------------------+-------------+--------+
+| rightid | name                 | descr                    | screenname  | status |
+
++---------+----------------------+--------------------------+-------------+--------+
+|       1 | Add New User         | this add new user screen | /addUser    | A	   |	
+|																				   |	
+|       2 | Delete Existing User | this is delete screen    | /deleteUser | A	   |
+|																				   |	
++---------+----------------------+--------------------------+-------------+--------+
+2 rows in set (0.00 sec)
+
+mysql> select * from user_role_mapping;
++----+-----+--------+--------+
+| id | uid | roleid | status |
++----+-----+--------+--------+
+|  1 |   1 |      1 | A      |
+|  2 |   1 |      2 | A      |
++----+-----+--------+--------+
+2 rows in set (0.00 sec)
+
+mysql> select * from role_right_mapping;
++----+--------+---------+--------+
+| id | roleid | rightid | status |
++----+--------+---------+--------+
+|  1 |      1 |       1 | A      |
++----+--------+---------+--------+
+1 row in set (0.03 sec)

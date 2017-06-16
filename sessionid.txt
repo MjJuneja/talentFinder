@@ -1,0 +1,32 @@
+Cookie Disable and Session Management
+Hidden Fields
+request session, servletcontext scope
+servletconfig and servletcontext 
+cookies
+
+
+
+
+============================================
+
+for login session on client side is compared by session id stored on server side along with all the data for that user.
+session id on client side is kept in cookie but if cookie is disabled on client side no session id is stored so nothing is compared on server so user wont be able to login.
+
+for every user different sessions are saved on server.
+
+We sometime needs attr=ibutes to be passed from 1 page to another and not on every page for this we use "request"
+
+request.setAttribute is use to keep life of value from one page to another only.
+
+
+
+redirect can take user from one page to another but not request
+where as requestDispatcher takes request as well from one page to another while user visits another page.
+
+hidden input files are to keep data hidden and send from one page to another
+<input type="hidden" >
+
+
+cookie can store a maximum of 20 bytes as a domain can make maximum of 20 cookies each of 1 bytes.
+
+Servlet says we can keep data in .xml and servletconfig says we can read them from .xml file

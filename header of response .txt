@@ -1,0 +1,20 @@
+if we use backspace after logging out we can go back to the logged in page. header contain everything such as cookies etc.
+
+cache loads the page inside it i.e html css js etc
+
+
+whenever http protocol works it send packets, response packet contain 2 things header and body
+similarly request packet contain same
+header contain cache, cookies , language etc.
+
+all details from sites go through request header
+
+gzip compress the html code as heavy site load early but for such file to run its decompressing file shall be there 	
+
+response.setHeader("refresh","2"); refresh page in every 2 second
+
+header is meta information
+
+
+To read:
+User Role Right Group Authentication Autherization

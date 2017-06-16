@@ -1,0 +1,21 @@
+in java web development logics can be distributed and can be implemented in cluster environemnt. Such applications are called distributed applications and also enterprise solution. eg ERP system which has many internal systems. like managing stocks, managing clients etc.
+
+
+this is implemented via Servlet, JSP, Struts(framework)  and it has EJB for enterprise solution i.e., hosting logics on server.
+
+
+requirements : Spring, Hibernate/JPA , WebServices   {for next level}
+
+
+EJB is required only when application is way too large that needed to be distributed as server to run EJB is too large. ==> So Spring overcome this problem by making loosely coupled application (POJO) and integrating different applications using its different modules.
+
+Hibernate : allowed user write code in OOP format and internally convert it in RDBMS database format.
+JPA is set of interfaces which need to be implemented by any type of hibernate variant getting used in market. {Java Presistance API} 
+main user of Hibernate is database independent feature
+
+WebServices : language interdependent on front end side.
+
+Spring contains business logic written using Core Java which is further connected to Hibernate.
+
+Web Services is done using SOAP and REST and Spring is integration of both. Web Services provide XML or JSON. Soap and Rest are guidelines of web Services definition.
+

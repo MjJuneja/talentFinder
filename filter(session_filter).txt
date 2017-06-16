@@ -1,0 +1,34 @@
+session checking code is getting used everywhere. so we want it to be available in singe class and reduce code. we use filter for this
+
+Filter intercept the object.. filter is a preprocessing layer FOR CHECKIng session or authorization.
+
+we create session and when we need to check session we pass request through filter and if session condition is true it pass through it and go to the desired place.
+
+filter is light weight. and run on request. filter is light weight as it checks for the first time and if condition is true it let you inside for heavy task.
+
+Filter is an interface thats why it is light weight.
+
+Preprocess is light weight so we use interface.
+
+we create pattern for all the servlet so that we can access it and check for session is created or not.
+
+FilterChain tells where we have to go forward
+
+=======================================================================================================================================
+
+ques 1? how many user are login
+ques 2? how good is performance
+
+
+
+To get options on page dynamically from table and dont want them to be load again and again so we store them on heap as soon as server is started and server dont get restarted to check whether data is updated or not. But this is not synchronise 
+So to overcome this we do multi threading with threads working on back side to hit data base and check is everything same or some updation has occur.
+
+
+
+to get the count of user logged in we will use HttpSessionListener that starts when we login the application and stops when application no longer active
+
+
+
+As server starts data goes in cache and when it stops data gets removed... So context listener is needed for this.
+http://localhost:8080/TalentFinder - this is the context(root) of the web application from where application run. In an application only one context listener is there

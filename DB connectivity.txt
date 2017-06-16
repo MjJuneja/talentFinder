@@ -1,0 +1,53 @@
+In 1995 no data base software application give its access to java
+
+Windows has ODBC : open database conecntion
+it can speak to any DB application
+
+Every data base on higher side has its own driver that talk to lower writen codes
+JAVA talks to ODBC and there is driver which act as bridge between ODBC and DB application
+
+JDBC and ODBC is [type 1] connectivity this is known as Bridge driver type, as its only there in windows and hence make java platform dependent
+JDK has by default code to talk with JDBC
+
+Type 2:
+
+DB application has there drivers containing top layer made in java and below it is native code which can be accessed by JDBC and these are known as Partial Native Driver
+but every application has driver written in different forms
+
+So different interface are there provided in jdbc which all vendors or DB application shall adapt while making codes in drivers.
+eg- Connection
+	Statement/PreparedStatement
+	ResultSet
+
+
+Type 3:
+As DB is on remote system all those machine accessing data base shall have drivers installed so to overcome this type 3 made middleWare machine(Server) where driver are installed and Java code will access it then go to DB
+
+So type 3 is called MiddleWare Partial Native Driver..
+But it was too slow and server was introduced so was never used
+
+
+Type 4:
+Here drivers were writen purely in java and are called pure java native driver.
+It was fast as converion will occurs only once when driver will communicate with DB.
+
+
+for accessing sql we need to import java.Sql.* to access all interfaces
+
+
+for mac and linux to start mysql
+stop the mysql first
+sudo mysqld_safe --skip-grant-tables
+mysql -u root
+
+
+
+table without duplicate data shall be made master table
+
+doPut is to do updation
+
+
+
+
+
+
